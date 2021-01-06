@@ -1,0 +1,44 @@
+﻿<Window x:Class="VIZ_Kacicnik__.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        xmlns:local="clr-namespace:VIZ_Kacicnik__"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="876.029" Width="1350">
+    <Grid Margin="0,0,-8,-3">
+        <Button x:Name="btnReferencno" Content="Izberi referencno" HorizontalAlignment="Left" Margin="24,0,0,0" VerticalAlignment="Top" Width="113" Click="btnReferencno_Click"/>
+        <Button x:Name="btnSifrirano" Content="Izberi sifrirano" HorizontalAlignment="Left" Margin="424,0,0,0" VerticalAlignment="Top" Width="113" Click="btnSifrirano_Click"/>
+        <TextBox x:Name="txtboxRef" HorizontalAlignment="Left" Height="346" Margin="24,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" TextChanged="txtboxRef_TextChanged"/>
+        <TextBox x:Name="txboxSif" HorizontalAlignment="Left" Height="346" Margin="424,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201"/>
+        <TextBox x:Name="txtCountRef" HorizontalAlignment="Left" Height="346" Margin="247,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.456,0.187"/>
+        <TextBox x:Name="txtCountSif" HorizontalAlignment="Left" Height="346" Margin="650,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.456,0.187"/>
+        <Button x:Name="btnFrekRef" Content="Frekvenca referencno" HorizontalAlignment="Left" Margin="24,38,0,0" VerticalAlignment="Top" Width="134" Click="btnFrekRef_Click"/>
+        <Button x:Name="btnFrekSif" Content="Frekvenca šifriranega" HorizontalAlignment="Left" Margin="424,38,0,0" VerticalAlignment="Top" Width="113" Click="btnFrekSif_Click"/>
+        <Button x:Name="btnSifrirajBesedilo" Content="Dešifriraj besedilo" HorizontalAlignment="Left" Margin="24,452,0,0" VerticalAlignment="Top" Width="94" Click="btnSifrirajBesedilo_Click"/>
+        <Label Content="Dešifrirano besedilo" HorizontalAlignment="Left" Margin="24,477,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtboxDesif" HorizontalAlignment="Left" Height="315" Margin="24,523,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201"/>
+        <Button x:Name="btnShrani" Content="Shrani dešifrirano" HorizontalAlignment="Left" Margin="275,803,0,0" VerticalAlignment="Top" Width="116" Click="btnShrani_Click"/>
+        <TextBox x:Name="txt1" HorizontalAlignment="Left" Height="23" Margin="333,558,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt2" HorizontalAlignment="Left" Height="23" Margin="555,558,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnZamenjaj" Content="Zamenjaj črki" HorizontalAlignment="Left" Margin="582,618,0,0" VerticalAlignment="Top" Width="93" Click="btnZamenjaj_Click"/>
+        <Label Content="Prva črka" HorizontalAlignment="Left" Margin="333,532,0,0" VerticalAlignment="Top"/>
+        <Label Content="Druga črka" HorizontalAlignment="Left" Margin="555,532,0,0" VerticalAlignment="Top"/>
+        <Label Content="zamenjaj z" HorizontalAlignment="Left" Margin="471,558,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnGraf" Content="Nariši referenčni graf" HorizontalAlignment="Left" Margin="24,414,0,0" VerticalAlignment="Top" Width="116" Click="btnGraf_Click"/>
+        <DVC:Chart Name="mcChart"  
+            Background="White"  
+            Foreground="DarkBlue"  
+            Margin="809,0,10,345">
+            <DVC:Chart.Series>
+                <DVC:BarSeries   
+                    IndependentValueBinding="{Binding Path=Key}"
+                    DependentValueBinding="{Binding Path=Value}">
+                </DVC:BarSeries>
+            </DVC:Chart.Series>
+        </DVC:Chart>
+        <Button x:Name="btnGrafDeSif" Content="Nariši defišriran graf" HorizontalAlignment="Left" Margin="424,803,0,0" VerticalAlignment="Top" Width="141" Click="btnGrafDeSif_Click"/>
+        <Button x:Name="btnGrafSif1" Content="Nariši šifriran graf" HorizontalAlignment="Left" Margin="424,414,0,0" VerticalAlignment="Top" Width="141" Click="btnGrafSif1_Click"/>
+    </Grid>
+</Window>
